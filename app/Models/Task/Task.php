@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Task extends Model
 {
     use HasFactory;
+    
+    const Name = 'name';
+    const IsCompleted = 'is_completed';
+    
+    protected $fillable = [
+        self::Name,
+        self::IsCompleted
+    ];
 }
