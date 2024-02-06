@@ -9,6 +9,7 @@ class Task extends Model
 {
     use HasFactory;
     
+    const Id = 'id';
     const Name = 'name';
     const IsCompleted = 'is_completed';
     

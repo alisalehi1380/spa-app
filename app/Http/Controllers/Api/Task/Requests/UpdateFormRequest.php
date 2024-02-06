@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Task\Requests;
+namespace App\Http\Controllers\Api\Task\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateFormRequest extends FormRequest
+class UpdateFormRequest extends FormRequest
 {
     public function authorize(): bool
     {
         return false;
     }
-
+    
     public function rules(): array
     {
         return [
