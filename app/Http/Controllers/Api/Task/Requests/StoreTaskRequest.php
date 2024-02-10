@@ -4,17 +4,19 @@ namespace App\Http\Controllers\Api\Task\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateFormRequest extends FormRequest
+class StoreTaskRequest extends FormRequest
 {
+    const Name = 'name';
+
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
-    
+
     public function rules(): array
     {
         return [
-            //
+            self::Name => 'required|max:255'
         ];
     }
 }

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Api\Task;
 
+use App\Http\Controllers\Api\Task\Requests\StoreTaskRequest;
+use App\Http\Controllers\Api\Task\Requests\UpdateTaskRequest;
 use App\Http\Controllers\Api\Task\Resources\TaskResource;
 use App\Http\Controllers\Controller;
 use App\Models\Task\Task;
-use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
@@ -19,9 +20,11 @@ class TaskController extends Controller
         //
     }
 
-    public function store(Request $request)
+    public function store(StoreTaskRequest $request)
     {
-        //
+        Task::create([$request]);
+        
+        return TaskResource::make($request);
     }
 
     public function show(Task $task)
@@ -34,7 +37,7 @@ class TaskController extends Controller
         //
     }
 
-    public function update(Request $request, string $id)
+    public function update(UpdateTaskRequest $request, string $id)
     {
         //
     }
