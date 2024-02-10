@@ -37,9 +37,11 @@ class TaskController extends Controller
         //
     }
 
-    public function update(UpdateTaskRequest $request, string $id)
+    public function update(UpdateTaskRequest $request, Task $task) : TaskResource
     {
-        //
+        $task->update($request->validated());
+        
+        return TaskResource::make($task);
     }
 
     public function destroy(string $id)

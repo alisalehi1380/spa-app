@@ -6,15 +6,17 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateTaskRequest extends FormRequest
 {
+    const Name = 'name';
+    
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
     
     public function rules(): array
     {
         return [
-            //
+            self::Name => 'required|max:255'
         ];
     }
 }
